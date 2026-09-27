@@ -1,0 +1,16 @@
+{
+  "name": "azs-zlatoust",
+  "version": "1.0.0",
+  "description": "Цены АЗС Златоуста (АИ-92/АИ-95)",
+  "private": true,
+  "scripts": {
+    "sync": "cap sync android"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.2.2"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.1.2",
+    "@capacitor/core": "^6.1.2"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "appId": "ru.zlatoust.azs",
+  "appName": "АЗС Златоуст",
+  "webDir": "www",
+  "server": {
+    "url": "https://thanks-likelihood-contracting-subscriber.trycloudflare.com",
+    "cleartext": true,
+    "allowNavigation": [
+      "*"
+    ]
+  }
+}
