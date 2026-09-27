@@ -1,116 +1,267 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Цены АЗС Златоуст</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"/>
+<meta name="theme-color" content="#0a0710"/>
+<title>Торговый помощник — Акции РФ</title>
 <style>
-  :root{
-    --bg:#0f1216; --card:#171b21; --card2:#1e242c; --fg:#eef2f6;
-    --dim:#8b96a5; --line:#2a323c; --acc:#39c07a; --warn:#e8a13c; --hot:#e05d5d;
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0; background:var(--bg); color:var(--fg);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-    padding:12px 12px calc(24px + env(safe-area-inset-bottom));
-  }
-  h1{font-size:19px;margin:6px 0 2px}
-  .upd{color:var(--dim);font-size:12.5px;margin-bottom:12px}
-  .hero{background:linear-gradient(135deg,#14361f,#0f1216);border:1px solid var(--line);
-        border-radius:16px;padding:14px;margin-bottom:14px}
-  .hero .row{display:flex;gap:10px;flex-wrap:wrap}
-  .hero .box{flex:1 1 45%;background:var(--card2);border-radius:12px;padding:10px 12px}
-  .hero .lbl{font-size:11.5px;color:var(--dim);text-transform:uppercase;letter-spacing:.04em}
-  .hero .val{font-size:20px;font-weight:800;margin-top:3px}
-  .hero .sub{font-size:11.5px;color:var(--dim);margin-top:3px}
-  .tabs{display:flex;gap:8px;margin:0 0 12px}
-  .tab{flex:1;padding:9px;text-align:center;border-radius:10px;background:var(--card);
-       border:1px solid var(--line);font-size:13.5px;font-weight:600}
-  .tab.on{background:#1d4d33;border-color:#2c7a4f}
-  .list{display:flex;flex-direction:column;gap:8px}
-  .st{background:var(--card);border:1px solid var(--line);border-radius:13px;
-      padding:11px 13px;display:flex;align-items:center;gap:12px}
-  .st .name{flex:1;min-width:0}
-  .st .brand{font-weight:700;font-size:14.5px}
-  .st .addr{color:var(--dim);font-size:12px;margin-top:2px;overflow:hidden;
-            text-overflow:ellipsis;white-space:nowrap}
-  .st .price{text-align:right;flex:none}
-  .st .p{font-size:17px;font-weight:800}
-  .st .p.g{color:var(--acc)} .st .p.y{color:var(--warn)} .st .p.r{color:var(--hot)}
-  .st .pu{font-size:11px;color:var(--dim)}
-  .foot{color:var(--dim);font-size:11.5px;margin-top:16px;line-height:1.5}
-  .spin{text-align:center;color:var(--dim);padding:30px}
+:root{
+  --bg:#07040d; --bg2:#0d0819;
+  --card:#140d24; --card2:#1d1333; --line:#2c1f4a;
+  --txt:#efe9ff; --mut:#9b8bbe; --mut2:#c9bde6;
+  --vio:#a855f7; --vio2:#7c3aed; --vio3:#c084fc;
+  --green:#34d399; --blue:#818cf8; --gray:#9b8bbe; --orange:#fbbf24; --red:#fb7185;
+  --up:#34d399; --down:#fb7185;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--txt);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+body{padding:0 0 env(safe-area-inset-bottom);
+  background:radial-gradient(120% 60% at 50% -10%, #2a1150 0%, #0d0819 45%, #07040d 100%) fixed}
+header{padding:16px 16px 12px;border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(88,28,135,.35),rgba(13,8,25,.9));
+  position:sticky;top:0;z-index:10;backdrop-filter:blur(10px)}
+h1{margin:0;font-size:17px;font-weight:800;letter-spacing:.3px;
+  background:linear-gradient(90deg,#e9d5ff,#a855f7);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mut);font-size:11.5px;margin-top:4px}
+.wrap{padding:12px 12px 42px}
+.tabs{display:flex;gap:7px;padding:12px 12px 0}
+.tab{flex:1;text-align:center;padding:10px 6px;border-radius:12px;background:var(--card);
+  color:var(--mut);font-size:12.5px;font-weight:700;border:1px solid var(--line);transition:.15s}
+.tab.on{background:linear-gradient(180deg,#3b1a6b,#25104a);color:#f3e8ff;
+  border-color:#7c3aed;box-shadow:0 0 0 1px #7c3aed55,0 6px 20px -8px #a855f7aa}
+.sec{margin:16px 0 6px;font-size:12px;font-weight:800;color:var(--mut2);letter-spacing:.4px;
+  text-transform:uppercase;padding-left:3px}
+.card{background:linear-gradient(180deg,var(--card),#100a1d);border:1px solid var(--line);
+  border-radius:16px;padding:13px 14px;margin-bottom:10px;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(180deg,var(--vio),transparent);opacity:.55}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.tk{font-size:16.5px;font-weight:800;letter-spacing:.5px}
+.px{font-size:14.5px;font-weight:800;text-align:right;color:#f3e8ff}
+.zone{font-size:11px;padding:4px 10px;border-radius:999px;background:var(--card2);
+  white-space:nowrap;border:1px solid transparent}
+.meta{color:var(--mut);font-size:11.5px;margin-top:7px;line-height:1.55}
+.meta b{color:var(--mut2);font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.chip{font-size:10.5px;padding:3px 9px;border-radius:8px;background:var(--card2);
+  color:#c9bde6;border:1px solid var(--line)}
+.chip.up{color:var(--up);border-color:#155e4a;background:#0c2a22}
+.chip.dn{color:var(--down);border-color:#5e1f2c;background:#2a0f16}
+.bar{height:6px;border-radius:4px;background:#1a1128;margin-top:10px;overflow:hidden;border:1px solid var(--line)}
+.bar i{display:block;height:100%;border-radius:4px;
+  background:linear-gradient(90deg,#7c3aed,#a855f7,#c084fc)}
+.cat{margin:18px 0 8px;font-size:13.5px;font-weight:800;display:flex;align-items:center;gap:7px}
+.c-green{color:var(--green)} .c-blue{color:var(--blue)} .c-gray{color:var(--gray)}
+.c-orange{color:var(--orange)} .c-red{color:var(--red)}
+.note{color:var(--mut);font-size:11px;margin-top:24px;text-align:center;line-height:1.65;padding:0 10px}
+.note b{color:#c9bde6}
+.spin{text-align:center;color:var(--mut);padding:44px 0;font-size:13px}
+.err{background:#2a0f16;border-color:#5e1f2c;color:#ffb4c0}
+.err::before{background:linear-gradient(180deg,var(--red),transparent)}
+button.refresh{width:100%;padding:13px;margin-top:16px;border-radius:13px;
+  border:1px solid #7c3aed;background:linear-gradient(180deg,#3b1a6b,#25104a);
+  color:#f3e8ff;font-size:13.5px;font-weight:800;letter-spacing:.2px}
+button.refresh:active{transform:scale(.985)}
+.pill{font-size:10.5px;color:var(--mut)}
+.z-ПРИВЛЕКАТЕЛЬНО{color:var(--green);background:#0c2a22;border-color:#155e4a}
+.z-НАБЛЮДАТЬ{color:var(--blue);background:#181a3a;border-color:#3730a3}
+.z-НЕЙТРАЛЬНО{color:var(--gray);background:var(--card2)}
+.z-РИСКОВАННО{color:var(--orange);background:#2a2110;border-color:#8a6410}
+.z-НЕ-ТРОГАТЬ{color:var(--red);background:#2a0f16;border-color:#5e1f2c}
 </style>
 </head>
 <body>
-  <h1>⛽ Цены АЗС Златоуста</h1>
-  <div class="upd" id="upd">загрузка…</div>
-
-  <div class="hero">
-    <div class="row">
-      <div class="box"><div class="lbl">АИ-92 минимум</div><div class="val" id="min92">—</div><div class="sub" id="min92s"></div></div>
-      <div class="box"><div class="lbl">АИ-95 минимум</div><div class="val" id="min95">—</div><div class="sub" id="min95s"></div></div>
-    </div>
-  </div>
-
-  <div class="tabs">
-    <div class="tab on" data-f="ai92">АИ-92</div>
-    <div class="tab" data-f="ai95">АИ-95</div>
-  </div>
-
-  <div class="list" id="list"><div class="spin">Тянем свежие цены…</div></div>
-
-  <div class="foot" id="foot"></div>
+<header>
+  <h1>📈 Торговый помощник</h1>
+  <div class="sub" id="hdrsub">Акции РФ · MOEX · загрузка…</div>
+</header>
+<div class="tabs">
+  <div class="tab on" data-v="buy">💰 Что брать</div>
+  <div class="tab" data-v="verdict">🧭 Вердикт</div>
+  <div class="tab" data-v="charts">📊 Графики</div>
+</div>
+<div class="wrap" id="app"><div class="spin">Загружаю данные MOEX…</div></div>
+<div class="note">
+  Вероятностная оценка на основе RSI, MA, свечных паттернов и статистики разворотов.<br/>
+  <b>Не является инвестиционной рекомендацией.</b> Не гарантия дохода.
+</div>
 
 <script>
-let DATA = null, FUEL = "ai92";
-const cls = v => v==null ? "" : (v<70?"g":v<95?"y":"r");
+const API = location.origin;
+let VIEW = 'buy';
+let CACHE = {};
+let CACHE_TTL = 90000;
 
-function render(){
-  if(!DATA) return;
-  document.getElementById("upd").textContent =
-    `Обновлено: ${DATA.updated} · всего ${DATA.count} АЗС с бензином`;
-  const s92 = DATA.stations.filter(s=>s.ai92!=null).sort((a,b)=>a.ai92-b.ai92);
-  const s95 = DATA.stations.filter(s=>s.ai95!=null).sort((a,b)=>a.ai95-b.ai95);
-  if(s92[0]){ document.getElementById("min92").textContent = s92[0].ai92.toFixed(2)+" ₽";
-    document.getElementById("min92s").textContent = s92[0].brand+" · "+s92[0].addr; }
-  if(s95[0]){ document.getElementById("min95").textContent = s95[0].ai95.toFixed(2)+" ₽";
-    document.getElementById("min95s").textContent = s95[0].brand+" · "+s95[0].addr; }
+const CATS = [
+  ['BUY','🟢 СЕЙЧАС БРАТЬ','c-green','перепродан + статистика подтверждает отскок'],
+  ['PREP','🟡 ГОТОВИТЬСЯ','c-blue','окно отскока близко, ждём подтверждения'],
+  ['WAIT','⏳ ЖДАТЬ ОТКАТА','c-orange','перекуплено — брать после коррекции'],
+  ['WATCH','🔵 НАБЛЮДАТЬ','c-blue','есть плюсы, не подтверждено'],
+  ['OUT','⚪ ВНЕ ИГРЫ','c-gray','нейтраль'],
+];
+const ZONE_ORDER = ['🟢 ПРИВЛЕКАТЕЛЬНО','🔵 НАБЛЮДАТЬ','⚪ НЕЙТРАЛЬНО','🟠 РИСКОВАННО','🔴 НЕ ТРОГАТЬ'];
 
-  const arr = (FUEL==="ai92"?s92:s95);
-  document.getElementById("list").innerHTML = arr.map(s=>{
-    const v = s[FUEL];
-    return `<div class="st"><div class="name"><div class="brand">${s.brand}</div>
-      <div class="addr">${s.addr}</div></div>
-      <div class="price"><div class="p ${cls(v)}">${v.toFixed(2)} ₽</div>
-      <div class="pu">${FUEL==="ai92"?"АИ-92":"АИ-95"}</div></div></div>`;
-  }).join("");
+function fmtPx(p){return (p==null?'—':Number(p).toLocaleString('ru-RU',{minimumFractionDigits:2,maximumFractionDigits:2})+' ₽')}
+function zoneClass(z){
+  if(!z)return '';
+  if(z.includes('ПРИВЛЕК'))return 'c-green';
+  if(z.includes('НАБЛЮД'))return 'c-blue';
+  if(z.includes('НЕЙТРАЛ'))return 'c-gray';
+  if(z.includes('РИСК'))return 'c-orange';
+  return 'c-red';
+}
+function esc(s){return (s==null?'':String(s)).replace(/[<>&"']/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&#39;'}[c]))}
 
-  document.getElementById("foot").innerHTML =
-    "📡 Источники: benzinanet.com · benzonavt.ru<br>⚠️ Данные справочные (агрегатор) — на табло АЗС могут отличаться.";
+async function load(view){
+  const app = document.getElementById('app');
+  if(CACHE[view] && (Date.now()-CACHE[view]._t)<CACHE_TTL){ render(view); return; }
+  app.innerHTML = '<div class="spin">Загружаю данные MOEX…</div>';
+  try{
+    const url = view==='buy' ? API+'/api/buy' : API+'/api/verdict';
+    const r = await fetch(url);
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    CACHE[view] = await r.json();
+    CACHE[view]._t = Date.now();
+  }catch(e){
+    app.innerHTML = '<div class="card err">Ошибка загрузки: '+esc(e.message)+'<br/><br/>Проверь соединение и нажми «Обновить».</div>'
+      + '<button class="refresh" onclick="hard()">Обновить</button>';
+    return;
+  }
+  render(view);
 }
 
-document.querySelectorAll(".tab").forEach(t=>{
+function hard(){ CACHE={}; load(VIEW); }
+
+function ts(d){
+  if(!d) return '';
+  try{
+    const t = new Date(d.ts || d);
+    return t.toLocaleString('ru-RU',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});
+  }catch(e){return ''}
+}
+
+function render(view){
+  const app = document.getElementById('app');
+  const d = CACHE[view];
+  document.getElementById('hdrsub').textContent =
+    'Акции РФ · MOEX · обновлено ' + (ts(d)||'—') + ' UTC';
+  let h = '';
+  if(view==='buy') h = renderBuy(d);
+  else if(view==='verdict') h = renderVerdict(d);
+  else h = renderCharts(d);
+  h += '<button class="refresh" onclick="hard()">Обновить</button>';
+  app.innerHTML = h;
+}
+
+function renderBuy(d){
+  const rows = d.rows || [];
+  let h = '';
+  const byCat = {};
+  rows.forEach(r=>{(byCat[r.cat]=byCat[r.cat]||[]).push(r)});
+  for(const [key,title,cls,desc] of CATS){
+    const list = byCat[key]||[];
+    if(!list.length) continue;
+    h += '<div class="cat '+cls+'">'+title+' ('+list.length+')</div>';
+    h += '<div class="pill" style="margin:-4px 0 8px 3px">'+desc+'</div>';
+    list.forEach(r=>h+=cardBuy(r));
+  }
+  if(!h) h = '<div class="card">Нет данных.</div>';
+  return h;
+}
+
+function cardBuy(r){
+  if(r.error) return '<div class="card err">'+esc(r.ticker)+': '+esc(r.error)+'</div>';
+  const t = r.timer||{};
+  const dir = t.direction && t.direction!=='—';
+  const pat = (r.patterns||[]).map(p=>{
+    const dn = /медвеж|чёрные|звезда/i.test(p);
+    return '<span class="chip '+(dn?'dn':'up')+'">'+esc(p)+'</span>';
+  }).join('');
+  const pct = Math.max(0,Math.min(100,r.score||0));
+  return '<div class="card">'
+    +'<div class="row"><div class="tk">'+esc(r.ticker)+'</div>'
+    +'<div class="px">'+fmtPx(r.price)+'</div></div>'
+    +'<div class="row" style="margin-top:7px"><span class="zone '+zoneClass(r.zone)+'">'+esc(r.zone)+'</span>'
+    +'<span class="pill">скор '+pct+'/100</span></div>'
+    +'<div class="bar"><i style="width:'+pct+'%"></i></div>'
+    +'<div class="meta">RSI <b>'+r.rsi14+'</b> · тренд <b>'+esc(r.trend)+'</b>'
+    +(dir?' · таймер: <b>'+esc(t.direction)+'</b> ~'+t.remain_days+' дн, P '+t.up_prob+'%':'')
+    +'<br/>ориентир входа ≤ <b>'+fmtPx(r.target)+'</b></div>'
+    +(pat?'<div class="chips">'+pat+'</div>':'')
+    +'</div>';
+}
+
+function renderVerdict(d){
+  const rows = (d.rows||[]).filter(r=>!r.error);
+  let h = '';
+  const groups = {};
+  ZONE_ORDER.forEach(z=>groups[z]=[]);
+  rows.forEach(r=>{ if(groups[r.zone]) groups[r.zone].push(r); else groups[r.zone]=[r]; });
+  for(const z of Object.keys(groups)){
+    const list = groups[z];
+    if(!list.length) continue;
+    h += '<div class="cat '+zoneClass(z)+'">'+z+' ('+list.length+')</div>';
+    list.forEach(r=>{
+      const t = r.timer||{};
+      const pat = (r.patterns||[]).map(p=>{
+        const dn = /медвеж|чёрные|звезда/i.test(p);
+        return '<span class="chip '+(dn?'dn':'up')+'">'+esc(p)+'</span>';
+      }).join('');
+      const pct = Math.max(0,Math.min(100,r.final||0));
+      h += '<div class="card">'
+        +'<div class="row"><div class="tk">'+esc(r.ticker)+'</div>'
+        +'<div class="px">'+fmtPx(r.price)+'</div></div>'
+        +'<div class="row" style="margin-top:7px"><span class="pill">итог '+pct+'/100</span>'
+        +'<span class="pill">RSI '+r.rsi14+' · '+esc(r.trend)+'</span></div>'
+        +'<div class="bar"><i style="width:'+pct+'%"></i></div>'
+        +(t.direction&&t.direction!=='—'?'<div class="meta">⏳ таймер: <b>'+esc(t.direction)+'</b> ~'+t.remain_days+' дн, P '+t.up_prob+'%</div>':'')
+        +(pat?'<div class="chips">'+pat+'</div>':'')
+        +'</div>';
+    });
+  }
+  if(!h) h = '<div class="card">Нет данных.</div>';
+  return h;
+}
+
+function renderCharts(d){
+  const rows = (d.rows||[]).filter(r=>!r.error).slice(0,18);
+  let h = '<div class="card" style="background:transparent;border:none;padding:0 0 6px;box-shadow:none">'
+    +'<span class="pill">Свечной график с MA20/50/200 и RSI. Нажми на тикер — откроется картинка.</span></div>';
+  if(!rows.length) return h+'<div class="card">Нет данных.</div>';
+  rows.forEach(r=>{
+    h += '<div class="card" style="cursor:pointer" onclick="showChart(\''+esc(r.ticker)+'\')">'
+      +'<div class="row"><div class="tk">'+esc(r.ticker)+'</div>'
+      +'<div class="px">'+fmtPx(r.price)+'</div></div>'
+      +'<div class="meta">RSI '+r.rsi14+' · '+esc(r.trend)+' · <span class="pill">показать график ▸</span></div>'
+      +'</div>';
+  });
+  return h;
+}
+
+function showChart(tk){
+  const app = document.getElementById('app');
+  app.innerHTML = '<div class="cat c-blue">📊 '+esc(tk)+'</div>'
+    +'<div class="card" style="padding:6px"><img id="chimg" style="width:100%;border-radius:12px;display:block" '
+    +'src="'+API+'/api/chart/'+encodeURIComponent(tk)+'.png" alt="'+esc(tk)+'"/></div>'
+    +'<div class="spin" id="chload">Рендерю график…</div>'
+    +'<button class="refresh" onclick="render(VIEW)">← Назад</button>';
+  const img = document.getElementById('chimg');
+  img.onload = ()=>{const l=document.getElementById('chload'); if(l) l.style.display='none';};
+  img.onerror = ()=>{const l=document.getElementById('chload'); if(l) l.textContent='График недоступен';};
+}
+
+document.querySelectorAll('.tab').forEach(t=>{
   t.onclick = ()=>{
-    document.querySelectorAll(".tab").forEach(x=>x.classList.remove("on"));
-    t.classList.add("on"); FUEL = t.dataset.f; render();
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+    t.classList.add('on');
+    VIEW = t.dataset.v;
+    load(VIEW);
   };
 });
 
-async function load(){
-  try{
-    const r = await fetch("/api/prices", {cache:"no-store"});
-    DATA = await r.json();
-    if(DATA.error) throw new Error(DATA.error);
-    render();
-  }catch(e){
-    document.getElementById("list").innerHTML =
-      `<div class="spin">Ошибка загрузки: ${e.message}</div>`;
-  }
-}
-load();
-setInterval(load, 120000); // автообновление каждые 2 мин
+load('buy');
 </script>
 </body>
 </html>

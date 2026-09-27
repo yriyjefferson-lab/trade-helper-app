@@ -1,7 +1,7 @@
 {
-  "name": "azs-zlatoust",
+  "name": "trade-helper",
   "version": "1.0.0",
-  "description": "Цены АЗС Златоуста (АИ-92/АИ-95)",
+  "description": "Торговый помощник — акции РФ (RSI/MA/паттерны/таймер)",
   "private": true,
   "scripts": {
     "sync": "cap sync android"

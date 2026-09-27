@@ -1,12 +1,10 @@
 {
-  "appId": "ru.zlatoust.azs",
-  "appName": "АЗС Златоуст",
+  "appId": "ru.trade.helper",
+  "appName": "Торговый помощник",
   "webDir": "www",
   "server": {
-    "url": "https://thanks-likelihood-contracting-subscriber.trycloudflare.com",
+    "url": "https://refurbished-sequence-heel-theoretical.trycloudflare.com",
     "cleartext": true,
-    "allowNavigation": [
-      "*"
-    ]
+    "allowNavigation": ["*"]
   }
 }

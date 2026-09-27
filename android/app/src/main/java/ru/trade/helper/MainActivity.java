@@ -1,4 +1,4 @@
-package ru.zlatoust.azs;
+package ru.trade.helper;
 
 import com.getcapacitor.BridgeActivity;
 
