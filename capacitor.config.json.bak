@@ -1,0 +1,10 @@
+{
+  "appId": "ru.trade.helper",
+  "appName": "Торговый помощник",
+  "webDir": "www",
+  "server": {
+    "url": "https://refurbished-sequence-heel-theoretical.trycloudflare.com",
+    "cleartext": true,
+    "allowNavigation": ["*"]
+  }
+}

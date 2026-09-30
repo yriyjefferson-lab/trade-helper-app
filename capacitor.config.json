@@ -3,7 +3,7 @@
   "appName": "Торговый помощник",
   "webDir": "www",
   "server": {
-    "url": "https://refurbished-sequence-heel-theoretical.trycloudflare.com",
+    "url": "http://45.150.37.188",
     "cleartext": true,
     "allowNavigation": ["*"]
   }
